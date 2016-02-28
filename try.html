@@ -4,7 +4,7 @@
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-    var socket = io.connect("http://powerful-beach-11696.herokuapp.com:80");
+    var socket = io.connect("127.0.0.1:5000");
     socket.on('position', function(data){
     	console.log(data['data'][0]['clients'][0]['client0'][0]['tl']);
     });

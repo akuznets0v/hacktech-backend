@@ -8,6 +8,7 @@ socketio = SocketIO(app)
 
 
 
+
 # Server side
 @socketio.on('connect')
 def on_connect():
@@ -40,3 +41,4 @@ def on_connect():
 
 if __name__ == '__main__':
     socketio.run(app)
+

@@ -6,6 +6,8 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app)
 
+
+
 # Server side
 @socketio.on('connect')
 def on_connect():
@@ -27,9 +29,10 @@ def on_connect():
                         }]
                 },
                 {"balls":
-                    {"0":
-                        {"position": [10,10]}
-                    }
+                    [
+                        {"globalPosition": [10,10]},
+                        {"position": [10,10]},
+                    ]
                 }]
             }
             

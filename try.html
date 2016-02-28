@@ -3,9 +3,13 @@
 
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript" charset="utf-8">
-    var socket = io.connect("http://127.0.0.1:5000");
+
+    var socket = io.connect("http://powerful-beach-11696.herokuapp.com:80");
     socket.on('position', function(data){
     	console.log(data['data'][0]['clients'][0]['client0'][0]['tl']);
+    });
+
+
     	//Data > first element > clients > first element > client0 > first element > tl
     	// Format:
 	    	// {"data":

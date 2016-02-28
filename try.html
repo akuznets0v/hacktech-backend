@@ -1,0 +1,40 @@
+<html>
+
+
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript" charset="utf-8">
+    var socket = io.connect("http://127.0.0.1:5000");
+    socket.on('position', function(data){
+    	console.log(data['data'][0]['clients'][0]['client0'][0]['tl']);
+    	//Data > first element > clients > first element > client0 > first element > tl
+    	// Format:
+	    	// {"data":
+	     //            [{"clients":
+	     //                    [{"client0":
+	     //                        [{"tl": [0,500] },
+	     //                        {"tr": [100,500] },
+	     //                        {"bl": [0,0] },
+	     //                        {"br": [100,0] }]
+	     //                    },
+	     //                    {"client1":
+	     //                        [{"tl": [200,500] },
+	     //                        {"tr": [300,500] },
+	     //                        {"bl": [200,0] },
+	     //                        {"br": [300,0] }]
+	     //                    }]
+	     //            },
+	     //            {"balls":
+	     //                {"0":
+	     //                    {"position": [10,10]}
+	     //                }
+	     //            }]
+	     //        }
+	    	// });
+
+
+    // socket.on('connect', function() { 
+    // 	socket.emit('connect', {'data': 'connecting'});
+    // 	});
+</script>
+
+</html>

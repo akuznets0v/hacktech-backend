@@ -4,11 +4,25 @@
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript" charset="utf-8">
 
-    var socket = io.connect("127.0.0.1:5000");
+    var socket = io.connect("192.168.44.3:80");
     socket.on('position', function(data){
     	console.log(data['data'][0]['clients'][0]['client0'][0]['tl']);
     });
 
+// var client0_tl_tuple = data['data'][0]['clients'][0]['client0'][0]['tl'];
+// var client0_tr_tuple = data['data'][0]['clients'][0]['client0'][0]['tr'];
+// var client0_bl_tuple = data['data'][0]['clients'][0]['client0'][0]['bl'];
+// var client0_br_tuple = data['data'][0]['clients'][0]['client0'][0]['br'];
+//
+// var client1_tl_tuple = data['data'][0]['clients'][0]['client1'][0]['tl'];
+// var client1_tr_tuple = data['data'][0]['clients'][0]['client1'][0]['tr'];
+// var client1_bl_tuple = data['data'][0]['clients'][0]['client1'][0]['bl'];
+// var client1_br_tuple = data['data'][0]['clients'][0]['client1'][0]['br'];
+
+//var ball_location = data['data'][0]['balls'][0]['phone'];
+//var ball_global_position = data['data'][0]['balls'][0]['globalPosition'];
+//var ball_local_position = data['data'][0]['balls'][0]['position'];
+//var ball_velocity_tuple = data['data'][0]['balls'][0]['velocity'];
 
     	//Data > first element > clients > first element > client0 > first element > tl
     	// Format:
@@ -27,11 +41,13 @@
 	     //                        {"br": [300,0] }]
 	     //                    }]
 	     //            },
-	     //            {"balls":
-	     //                {"0":
-	     //                    {"position": [10,10]}
-	     //                }
-	     //            }]
+	     // //    {"balls":
+      //                   [
+      //                       {'phone': 0},
+      //                       {"globalPosition": [16,18]},
+      //                       {"position": [10,10]},
+      //                   ]
+      //               }]
 	     //        }
 	    	// });
 
